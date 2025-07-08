@@ -35,31 +35,31 @@ A powerful, plug-and-play CLI tool to scaffold a modern Express.js API with ever
 ### Using `pnpm`
 
 ```
-pnpm dlx create-express-api-cli my-api --ts
+pnpm dlx create-express-api-cli-with-docker my-api --ts
 ```
 
 ### Using `npm`
 
 ```
-npx create-express-api-cli my-api --ts
+npx create-express-api-cli-with-docker my-api --ts
 ```
 
 ### Using `yarn`
 
 ```
-yarn create express-api-cli my-api --ts
+yarn create express-api-cli-with-docker my-api --ts
 ```
 
 > To use JavaScript instead of TypeScript:
 
 ```
-npx create-express-api-cli my-api --js
+npx create-express-api-cli-with-docker my-api --js
 ```
 
 > To include Docker and Jenkins support:
 
 ```
-npx create-express-api-cli my-api --ts --docker
+npx create-express-api-cli-with-docker my-api --ts --docker
 ```
 
 ---
