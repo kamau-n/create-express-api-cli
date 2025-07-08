@@ -1,0 +1,38 @@
+pipeline {
+  agent any
+
+  environment {
+    NODE_ENV = 'production'
+    DEPLOY_DIR = '/var/www/my-api'
+  }
+
+  stages {
+    stage('Checkout') {
+      steps {
+        git 'https://github.com/your-org/my-api.git'
+      }
+    }
+
+    stage('Install Dependencies') {
+      steps {
+        sh 'pnpm install'
+      }
+    }
+
+    stage('Build') {
+      steps {
+        sh 'pnpm build'
+      }
+    }
+
+    stage('Deploy with PM2') {
+      steps {
+        sh '''
+          pm2 delete my-api || true
+          pm2 start dist/index.js --name my-api
+          pm2 save
+        '''
+      }
+    }
+  }
+}
